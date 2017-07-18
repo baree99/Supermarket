@@ -26,12 +26,16 @@ public class CashRegister {
         for (Map.Entry<String, Double> entry : shoppingCart.products.entrySet()) {
             String product = entry.getKey();
             Double quantity = entry.getValue();
-        subTotal += priceList.getUnitPrice(product) * quantity;
+        subTotal += roundToTwoDecimalPlaces(priceList.getUnitPrice(product) * quantity);
     }
         return subTotal;
     }
     
     public void addToCart(String product, Double quantity) {
         shoppingCart.addToCart(product, quantity);
+    }
+    
+    private Double roundToTwoDecimalPlaces(Double number) {
+        return Math.round(number * 100.0) / 100.0;
     }
 }

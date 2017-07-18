@@ -56,7 +56,8 @@ public class CashRegisterTest {
         CashRegister instance = new CashRegister();
         instance.addToCart("Beans", 3.0);
         instance.addToCart("Coke", 2.0);
-        Double expResult = 2.90;
+        instance.addToCart("Oranges", 0.200);
+        Double expResult = 3.30;
         Double result = instance.calculateSubTotal();
         assertEquals(expResult, result);
     }
