@@ -20,6 +20,10 @@ public class ShoppingCart {
     }
     
     public void addToCart(String product, Double amount) {
-        products.put(product, amount);
+        if ( products.containsKey(product) ) {
+            products.put(product, products.get(product) + amount);
+        } else {
+            products.put(product, amount);
+        }
     }
 }

@@ -41,7 +41,7 @@ public class ShoppingCartTest {
      * Test of addToCart method, of class ShoppingCart.
      */
     @Test
-    public void testAddToCart() {
+    public void testAddToCart1() {
         System.out.println("addToCart");
         String product = "Beans";
         Double amount = 1.00;
@@ -49,7 +49,20 @@ public class ShoppingCartTest {
         ShoppingCart instance = new ShoppingCart();
         instance.addToCart(product, amount);
         Double result = instance.products.get(product);
-        assertEquals(result, expResult);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testAddToCart2() {
+        System.out.println("addToCart");
+        String product = "Beans";
+        Double amount = 1.00;
+        Double expResult = amount + amount;
+        ShoppingCart instance = new ShoppingCart();
+        instance.addToCart(product, amount);
+        instance.addToCart(product, amount);
+        Double result = instance.products.get(product);
+        assertEquals(expResult, result);
     }
     
 }
