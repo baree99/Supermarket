@@ -41,12 +41,12 @@ public class PriceListTest {
      * Test of getPrice method, of class PriceList.
      */
     @Test
-    public void testGetPrice() {
+    public void testGetUnitPrice() {
         System.out.println("getPrice");
-        double weight = 0.20;
+        String product = "Beans";
         PriceList instance = new PriceList();
-        double expResult = 0.00;
-        double result = instance.getPrice(weight);
+        double expResult = 0.50;
+        double result = instance.getUnitPrice(product);
         assertEquals(expResult, result, 0.0);
     }
     

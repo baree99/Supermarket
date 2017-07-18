@@ -12,15 +12,25 @@ import java.util.HashMap;
  * @author peterbarcsak
  */
 public class PriceList {
+    
+    private final HashMap<String, Double> productPrices;
+
+    public PriceList() {
+        this.productPrices = new HashMap<String, Double>() {{
+            put("Beans", 0.50);
+            put("Coke", 0.70);
+            put("Oranges", 1.99);
+        }};
+    }
 
     
     /**
      *
-     * @param weight
+     * @param product
      * @return
      */
-    public double getPrice(double weight) {
-       return 0.00; 
+    public double getUnitPrice(String product) {
+       return productPrices.get(product); 
     }
     
 }
