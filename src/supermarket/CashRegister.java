@@ -5,17 +5,33 @@
  */
 package supermarket;
 
+import java.util.Map;
+
 /**
  *
  * @author peterbarcsak
  */
 public class CashRegister {
+    
+    ShoppingCart shoppingCart;
+    PriceList priceList;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public CashRegister() {
+        this.shoppingCart = new ShoppingCart();
+        this.priceList = new PriceList();
     }
     
+    public Double calculateSubTotal() {
+        Double subTotal = 0.00;
+        for (Map.Entry<String, Double> entry : shoppingCart.products.entrySet()) {
+            String product = entry.getKey();
+            Double quantity = entry.getValue();
+        subTotal += priceList.getUnitPrice(product) * quantity;
+    }
+        return subTotal;
+    }
+    
+    public void addToCart(String product, Double quantity) {
+        shoppingCart.addToCart(product, quantity);
+    }
 }

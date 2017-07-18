@@ -19,11 +19,11 @@ public class ShoppingCart {
         this.products = new HashMap<>();
     }
     
-    public void addToCart(String product, Double amount) {
+    public void addToCart(String product, Double quantity) {
         if ( products.containsKey(product) ) {
-            products.put(product, products.get(product) + amount);
+            products.put(product, products.get(product) + quantity);
         } else {
-            products.put(product, amount);
+            products.put(product, quantity);
         }
     }
 }

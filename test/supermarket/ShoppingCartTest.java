@@ -56,11 +56,11 @@ public class ShoppingCartTest {
     public void testAddToCart2() {
         System.out.println("addToCart");
         String product = "Beans";
-        Double amount = 1.00;
-        Double expResult = amount + amount;
+        Double quantity = 1.00;
+        Double expResult = quantity + quantity;
         ShoppingCart instance = new ShoppingCart();
-        instance.addToCart(product, amount);
-        instance.addToCart(product, amount);
+        instance.addToCart(product, quantity);
+        instance.addToCart(product, quantity);
         Double result = instance.products.get(product);
         assertEquals(expResult, result);
     }
