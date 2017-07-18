@@ -13,7 +13,7 @@ import java.util.HashMap;
  */
 public class PriceList {
     
-    private final HashMap<String, Double> productPrices;
+    public final HashMap<String, Double> productPrices;
 
     public PriceList() {
         this.productPrices = new HashMap<String, Double>() {{
